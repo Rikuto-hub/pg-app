@@ -1,0 +1,10 @@
+.container
+  = link_to 'POST', new_language_path
+  - @languages.each do |language|
+    .language_nav
+      .language_item
+        = language.user.email
+      .language_item
+        = language.language
+      .language_item
+        = language.title
