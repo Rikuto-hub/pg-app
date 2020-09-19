@@ -1,4 +1,5 @@
 class LanguagesController < ApplicationController
+    before_action :authenticate_user!, only:[new, :create, :edit, :destroy]
     def index
         @languages = Language.all
     end
@@ -10,7 +11,7 @@ class LanguagesController < ApplicationController
         if @language.save
             redirect_to languages_path,  notice: 'save'
         else
-            flash.now[error] = 'miss'
+            flash.now[:error] = 'miss'
             render :new
         end
     end
