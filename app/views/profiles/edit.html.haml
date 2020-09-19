@@ -1,0 +1,13 @@
+.container
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    .field
+      %div
+        = f.label :job, 'job', class: 'label'
+      %div
+        = f.text_field :job, class: 'form'
+    .field
+      %div
+        = f.label :introduction, 'introduction', class: 'label'
+      %div
+        = f.text_area :introduction, class: 'form'
+    = f.submit 'POST', class: 'btn'
