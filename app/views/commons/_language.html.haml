@@ -1,0 +1,9 @@
+- languages.each do |language|
+  = link_to language_articles_path(language) do
+    .language_nav
+      .language_item
+        = language.language
+      .language_item
+        %div= language.title
+        - if current_user === language.user
+          %div= link_to 'delete', language_path(language), data: {method: 'delete', confirm: 'ok?'}

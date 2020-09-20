@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
     before_action :authenticate_user!
     def show
         @profile = current_user.profile
+        @languages = current_user.languages
     end
     def edit
         @profile = current_user.prepare_profile

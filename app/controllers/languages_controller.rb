@@ -1,7 +1,7 @@
 class LanguagesController < ApplicationController
     before_action :authenticate_user!, only:[new, :create, :edit, :destroy]
     def index
-        @languages = Language.all
+        @languages = current_user.languages
     end
     def new
         @language = current_user.languages.build
@@ -16,7 +16,9 @@ class LanguagesController < ApplicationController
         end
     end
     def destroy
-        
+        language = current_user.languages.find(params[:id])
+        language.destroy!
+        redirect_to root_path, notice: 'delete'
     end
     private
     def language_params
