@@ -1,5 +1,5 @@
 class LanguagesController < ApplicationController
-    before_action :authenticate_user!, only:[new, :create, :edit, :destroy]
+    before_action :authenticate_user!
     def index
         @languages = current_user.languages
     end
