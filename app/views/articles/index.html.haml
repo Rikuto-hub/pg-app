@@ -1,15 +1,18 @@
 .container
-  .user_name
-    = @language.user.email
-  .article_post
-    = link_to 'POST', new_language_article_path(@language)
+  .article_top
+    .user_name
+      = @language.user.email
+    .article_post
+      - if @language.user === current_user
+        = link_to 'POST', new_language_article_path(@language)
   .articles
     - @articles.each do |article|
-      .article
-        .article_top
-          .article_title
-            = article.title
-          .article_number
-            = article.number
-        .article_error
-          = article.error
+      = link_to language_article_path(id: article.id) do
+        .article
+          .article_item
+            .article_title
+              = article.title
+            .article_number
+              = article.number
+          .article_error
+            = article.error

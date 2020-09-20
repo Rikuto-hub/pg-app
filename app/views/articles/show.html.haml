@@ -1,2 +1,18 @@
 .container
-  = @article.title
+  .article_detail
+    .article_title
+      %p Title
+      = @article.title
+    .article_error
+      %p Error
+      = @article.error
+    .answer
+      Answer
+    .answer_nav.hidden
+      .article_content
+        %p Answer
+        = @article.content
+      .article_memo
+        %p Memo
+        = @article.memo
+= javascript_pack_tag 'article'

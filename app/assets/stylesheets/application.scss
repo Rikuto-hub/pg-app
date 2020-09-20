@@ -1,6 +1,7 @@
 @import 'user';
 @import 'language';
 @import 'article';
+@import 'profile';
 
 a{
     text-decoration: none;
@@ -11,4 +12,7 @@ a:hover{
 }
 .container{
     padding: 10px;
+}
+.hidden{
+    display: none;
 }

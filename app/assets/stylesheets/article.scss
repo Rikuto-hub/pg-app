@@ -3,11 +3,32 @@
     margin: 20px 0;
     padding: 10px;
 }
-.article_top{
+.article_item{
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
 }
 .article_error{
     margin: 10px 0;
+}
+.article_top{
+    display: flex;
+    justify-content: space-between;
+}
+.article_detail{
+    p{
+        color: lightslategray;
+        border-bottom: ridge;
+    }
+    .answer{
+        text-align: center;
+        color: white;
+        background-color: black;
+        width: 30%;
+        border-radius: 20px;
+        margin: 40px auto;
+    }
+    .answer:hover{
+        opacity: 0.7;
+    }
 }

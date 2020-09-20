@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+    before_action :authenticate_user!, only:[:show, :new, :create, :edit, :update, :destroy]
     def index
         @language = Language.find(params[:language_id])
         @articles = @language.articles
