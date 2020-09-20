@@ -1,0 +1,15 @@
+.container
+  .user_name
+    = @language.user.email
+  .article_post
+    = link_to 'POST', new_language_article_path(@language)
+  .articles
+    - @articles.each do |article|
+      .article
+        .article_top
+          .article_title
+            = article.title
+          .article_number
+            = article.number
+        .article_error
+          = article.error
