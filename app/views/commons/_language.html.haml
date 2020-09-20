@@ -4,6 +4,8 @@
       .language_item
         = language.language
       .language_item
-        %div= language.title
+        = language.title
         - if current_user === language.user
-          %div= link_to 'delete', language_path(language), data: {method: 'delete', confirm: 'ok?'}
+          %div
+            = link_to 'delete', language_path(language), data: {method: 'delete', confirm: 'ok?'}
+            = link_to 'edit', edit_language_path(language)

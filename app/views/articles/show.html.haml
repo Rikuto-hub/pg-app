@@ -1,18 +1,24 @@
 .container
   .article_detail
+    .name
+    .article_item
+      - if @language.user === current_user
+        = link_to 'edit', edit_language_article_path(@language)
+        = link_to 'delete', language_article_path(@language), data: {method: 'delete', confirm: 'ok?'}
     .article_title
       %p Title
       = @article.title
     .article_error
       %p Error
       = @article.error
-    .answer
-      Answer
-    .answer_nav.hidden
-      .article_content
-        %p Answer
-        = @article.content
-      .article_memo
-        %p Memo
-        = @article.memo
+    -if @article.content.present?
+      .answer
+        Answer
+      .answer_nav.hidden
+        .article_content
+          %p Answer
+          = @article.content
+        .article_memo
+          %p Memo
+          = @article.memo
 = javascript_pack_tag 'article'

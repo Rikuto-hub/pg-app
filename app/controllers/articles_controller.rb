@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
         @articles = @language.articles
     end
     def show
+        @language = Language.find(params[:language_id])
         @article = Article.find(params[:id])
     end
     def new
@@ -22,13 +23,24 @@ class ArticlesController < ApplicationController
         end
     end
     def edit
-        
+        language = current_user.languages.find(params[:language_id])
+        @article = language.articles.find(params[:id])
     end
     def update
-        
+        language = current_user.languages.find(params[:language_id])
+        @article = language.articles.find(params[:id])
+        if @article.update(article_params)
+            redirect_to language_article_path(language)
+        else
+            flash.now[:error] = 'miss'
+            render :edit
+        end
     end
     def destroy
-        
+        language = current_user.languages.find(params[:language_id])
+        article = language.articles.find(params[:id])
+        article.destroy!
+        redirect_to language_articles_path(language), notice: 'delete'
     end
     private
     def article_params
