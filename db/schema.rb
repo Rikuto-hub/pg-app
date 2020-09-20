@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2020_09_19_172123) do
     t.bigint "language_id", null: false
     t.string "title", null: false
     t.text "error", null: false
-    t.text "content", null: false
-    t.text "memo", null: false
+    t.text "content"
+    t.text "memo"
     t.integer "number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

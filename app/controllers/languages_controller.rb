@@ -15,6 +15,18 @@ class LanguagesController < ApplicationController
             render :new
         end
     end
+    def edit
+        @language = current_user.languages.find(params[:id])
+    end
+    def update
+        @language = current_user.languages.find(params[:id])
+        if @language.update(language_params)
+            redirect_to root_path
+        else
+            flash.now[:error] = 'miss'
+            render :edit
+        end
+    end
     def destroy
         language = current_user.languages.find(params[:id])
         language.destroy!

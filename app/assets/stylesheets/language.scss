@@ -12,8 +12,10 @@
 }
 .language_item{
     padding: 5px;
-    display: flex;
-    justify-content: space-between;
+    word-wrap: break-all;
+    div{
+        float: right;
+    }
 }
 .language_top{
     display: flex;

@@ -1,0 +1,13 @@
+.container
+  = form_with(model: @language, url: language_path(@language), method: 'put', local: true) do |f|
+    .field
+      %div
+        = f.label :language, 'language', class: 'label'
+      %div
+        = f.text_field :language, class: 'form'
+    .field
+      %div
+        = f.label :title, 'title', class: 'label'
+      %div
+        = f.text_area :title, class: 'form'
+    = f.submit 'Update', class: 'btn'

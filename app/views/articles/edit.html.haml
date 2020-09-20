@@ -1,0 +1,28 @@
+.container
+  = form_with(model: @article, url: language_article_path(@article.language), method: 'put', local: true) do |f|
+    .field
+      %div
+        = f.label :title, 'title', class: 'label'
+      %div
+        = f.text_field :title, class: 'form'
+    .field
+      %div
+        = f.label :error, 'error message', class: 'label'
+      %div
+        = f.text_area :error, class: 'form'
+    .field
+      %div
+        = f.label :content, 'content', class: 'label'
+      %div
+        = f.text_area :content, class: 'form'
+    .field
+      %div
+        = f.label :memo, 'memo', class: 'label'
+      %div
+        = f.text_area :memo, class: 'form'
+    .field
+      %div
+        = f.label :number, 'number', class: 'label'
+      %div
+        = f.number_field :number, class: 'form'
+    = f.submit 'POST', class: 'btn'
