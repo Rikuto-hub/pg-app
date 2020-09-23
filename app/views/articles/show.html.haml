@@ -1,9 +1,11 @@
-.container
+.container#article-show{data: {article_id: @article.id}}
   .article_detail
     .name
     .article_item
       - if @language.user === current_user
         = link_to 'edit', edit_language_article_path(@language)
+      /= link_to "#{@language.user.email}" 
+      - if @language.user === current_user
         = link_to 'delete', language_article_path(@language), data: {method: 'delete', confirm: 'ok?'}
     .article_title
       %p Title
@@ -21,4 +23,13 @@
         .article_memo
           %p Memo
           = @article.memo
+  .comment
+    Comment
+  .comments_container.hidden
+    .comment_form
+      = text_area_tag :comment_content, '', class: 'comment_text'
+    .comment_post
+      AddComment
+    .comment_nav
 = javascript_pack_tag 'article'
+= javascript_pack_tag 'comment'

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: "languages#index"
   resource :profile, only:[:show, :edit, :update]
   resources :languages do
-    resources :articles
+    resources :articles 
+  end
+  resources :articles do
+    resources :comments
   end
 end
