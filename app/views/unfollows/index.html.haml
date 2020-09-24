@@ -1,0 +1,7 @@
+.container
+  .follow_title
+    Followers
+  - @followers.each do |follower|
+    = link_to account_path(follower) do
+      .follow_item
+        = follower.account_name

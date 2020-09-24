@@ -79,4 +79,6 @@ ActiveRecord::Schema.define(version: 2020_09_24_075323) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "relationships", "users", column: "follower_id"
+  add_foreign_key "relationships", "users", column: "following_id"
 end

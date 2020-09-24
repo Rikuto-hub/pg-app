@@ -1,6 +1,7 @@
 class FollowsController < ApplicationController
     def index
-        
+        user = User.find(params[:account_id])
+        @followings = user.followings
     end
     def show
         user = User.find(params[:account_id])
