@@ -1,7 +1,9 @@
 .container
   .profile
     .profile_name
-      %div= user.account_name
+      - if user.profile&.avatar&.attached?
+        = image_tag user.profile.avatar
+      = user.account_name
     .profile_top
       - if user === current_user
         %div= link_to 'edit', edit_profile_path
