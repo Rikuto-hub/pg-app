@@ -13,6 +13,13 @@
             Follow
           .unfollow.hidden
             unFollow
+    .follow_nav
+      = link_to account_follows_path(user.id) do
+        = user.followings.count
+        %br Follow
+      = link_to account_unfollows_path(user.id) do
+        = user.followers.count
+        %br Follower
     - if user.profile.present?
       .profile_item
         .job
