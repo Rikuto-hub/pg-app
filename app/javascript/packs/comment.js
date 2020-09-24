@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const comments = response.data
         comments.forEach((comment) => {
             $('.comment_nav').append(
-                `<div class="comment_item"><p>${comment.content}</p></div>`
+                `<div class="comment_item"><p>${comment.account_name}</p><p>${comment.content}</p></div>`
             )
         })
     })
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((response) => {
                 const comment = response.data
                 $('.comment_nav').append(
-                    `<div class="comment_item"><p>${comment.content}</p></div>`
+                    `<div class="comment_item"><p>${comment.account_name}</p><p>${comment.content}</p></div>`
                 )
                 $('#comment_content').val('')
             })

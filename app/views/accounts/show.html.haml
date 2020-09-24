@@ -1,0 +1,4 @@
+#account-show{data:{account_id: @user.id}}
+= render 'commons/profile', user: @user
+= render 'commons/language', languages: @user.languages
+= javascript_pack_tag 'follow'
