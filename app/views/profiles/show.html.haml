@@ -1,14 +1,2 @@
-.container
-  .profile_top
-    %div= link_to 'edit', edit_profile_path
-    %div= current_user.account_name
-    %div= link_to 'Logout', destroy_user_session_path, data: {method: 'delete', confirm: 'ok?'}
-  - if @profile.present?
-    .profile_item
-      .job
-        %p job
-        = @profile.job
-      .introduction
-        %p introduction 
-      = @profile.introduction
-  = render 'commons/language', languages: @languages
+= render 'commons/profile', user: current_user
+= render 'commons/language', languages: current_user.languages
