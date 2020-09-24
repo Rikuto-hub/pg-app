@@ -2,6 +2,11 @@
   = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
     .field
       %div
+        = f.label :avatar, 'avatar', class: 'label'
+      %div
+        = f.file_field :avatar, class: 'form'
+    .field
+      %div
         = f.label :job, 'job', class: 'label'
       %div
         = f.text_field :job, class: 'form'

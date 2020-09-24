@@ -17,6 +17,11 @@
         = f.text_area :content, class: 'form'
     .field
       %div
+        = f.label :article_img, 'image', class: 'label'
+      %div
+        = f.file_field :article_img, class: 'form'
+    .field
+      %div
         = f.label :memo, 'memo', class: 'label'
       %div
         = f.text_area :memo, class: 'form'

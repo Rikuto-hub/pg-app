@@ -1,10 +1,10 @@
 .container#article-show{data: {article_id: @article.id}}
   .article_detail
+    .article_name
+      = link_to "#{@language.user.account_name}" , account_path(@language.user.id)
     .article_item
       - if @language.user === current_user
         = link_to 'edit', edit_language_article_path(@language)
-      = link_to "#{@language.user.account_name}" , account_path(@language.user.id)
-      - if @language.user === current_user
         = link_to 'delete', language_article_path(@language), data: {method: 'delete', confirm: 'ok?'}
     .article_title
       %p Title
@@ -12,6 +12,9 @@
     .article_error
       %p Error
       = @article.error
+    .article_img
+      %p Image
+      = image_tag @article.article_img
     -if @article.content.present?
       .answer
         Answer
