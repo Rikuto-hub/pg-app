@@ -30,3 +30,5 @@
         .introduction
           %p introduction 
         = user.profile.introduction
+    .error_all
+      = link_to 'AllErrors', error_path(user.id)
