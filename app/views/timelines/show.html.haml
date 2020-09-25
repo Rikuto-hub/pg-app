@@ -2,30 +2,8 @@
   .article_followings
     - @languages.each do |language|
       - language.articles.each do |article|
-        .article_name
-          = link_to account_path(article.language) do
-            = article.language.user.account_name
-        = link_to language_article_path(id: article.id, language_id: article.language_id) do
-          .article
-            .article_item
-              .article_title
-                = article.title
-              .article_number
-                = article.number
-            .article_error
-              = article.error
+        = render partial: 'timeline', locals:{article: article}
   .article_all.hidden
     - @articles.each do |article|
-      .article_name
-        = link_to account_path(article.language) do
-          = article.language.user.account_name
-      = link_to language_article_path(id: article.id, language_id: article.language_id) do
-        .article
-          .article_item
-            .article_title
-              = article.title
-            .article_number
-              = article.number
-          .article_error
-            = article.error
+      = render partial: 'timeline', locals:{article: article}
 = javascript_pack_tag 'timeline'
