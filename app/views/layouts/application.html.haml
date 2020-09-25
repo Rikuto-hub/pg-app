@@ -10,7 +10,14 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
   %header.header
-    = link_to 'app', root_path
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    .header_right
+      = link_to 'App', root_path
+    .header_left
+      = link_to 'Timeline', timeline_path
+    .header_sub.hidden
+      All
+    .timeline_sub.hidden
+      Followings
+      %p.notice= notice
+      %p.alert= alert
+  = yield

@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     resources :unfollows, only:[:index,:create]
     resource :relation, only:[:show]
   end
+  resource :timeline, only:[:index, :show]
 end
