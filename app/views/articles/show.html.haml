@@ -13,8 +13,9 @@
       %p Error
       = @article.error
     .article_img
-      %p Image
-      = image_tag @article.article_img
+      - if @article.article_img.present?
+        %p Image
+        = image_tag @article.article_img
     -if @article.content.present?
       .answer
         Answer
