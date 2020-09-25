@@ -1,9 +1,14 @@
 .container
-  .article_followings
-    - @languages.each do |language|
-      - language.articles.each do |article|
+  - if user_signed_in?
+    .article_followings
+      - @languages.each do |language|
+        - language.articles.each do |article|
+          = render partial: 'timeline', locals:{article: article}
+    .article_all.hidden
+      - @articles.each do |article|
         = render partial: 'timeline', locals:{article: article}
-  .article_all.hidden
-    - @articles.each do |article|
-      = render partial: 'timeline', locals:{article: article}
+  - else
+    .article_all
+      - @articles.each do |article|
+        = render partial: 'timeline', locals:{article: article}
 = javascript_pack_tag 'timeline'

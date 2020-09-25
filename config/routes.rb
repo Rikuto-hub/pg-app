@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-  resources :accounts ,only:[:show] do
+  resources :accounts, only:[:show] do
     resources :follows, only:[:index,:create]
     resources :unfollows, only:[:index,:create]
     resource :relation, only:[:show]
   end
+  resources :errors, only:[:show]
   resource :timeline, only:[:index, :show]
 end
