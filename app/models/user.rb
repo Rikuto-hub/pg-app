@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :languages, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
   has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
   has_many :followings, through: :following_relationships, source: :following

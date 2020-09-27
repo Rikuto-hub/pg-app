@@ -12,12 +12,16 @@
   %header.header
     .header_right
       = link_to 'App', root_path
-    .header_left
-      = link_to 'Timeline', timeline_path
-    .header_sub.hidden
-      All
-    .timeline_sub.hidden
-      Followings
-      %p.notice= notice
-      %p.alert= alert
+    - if user_signed_in?
+      .header_left
+        = link_to 'Timeline', timeline_path
+      .header_sub.hidden
+        All
+      .timeline_sub.hidden
+        Followings
+    - else
+      .header_item
+        = link_to 'Sign up', new_user_registration_path
+  %p.notice= notice
+  %p.alert= alert
   = yield
