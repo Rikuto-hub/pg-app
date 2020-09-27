@@ -1,7 +1,11 @@
 class LanguagesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
     def index
-        @languages = current_user.languages
+        if user_signed_in?
+          @languages = current_user.languages
+        else
+            redirect_to timeline_path
+        end
     end
     def new
         @language = current_user.languages.build

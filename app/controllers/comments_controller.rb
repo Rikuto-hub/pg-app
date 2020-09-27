@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
         render json: comments
     end
     def create
+        user_signed_in?
         article = Article.find(params[:article_id])
         @comment = article.comments.build(comment_params)
         @comment.save!
