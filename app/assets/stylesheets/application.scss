@@ -4,11 +4,19 @@
 @import 'profile';
 @import 'comment';
 @import 'follow';
-
+body{
+    margin: 0;
+}
 .header{
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    background-color: whitesmoke;
+    border-bottom: ridge;
+    padding: 10px;
+    .header_right, .header_left, .header_sub, .timeline_sub, .header_item{
+        padding: 10px;
+    }
 }
 a{
     text-decoration: none;
