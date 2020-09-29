@@ -13,9 +13,10 @@
       %p Error
       = @article.error
     .article_img
-      - if @article.article_img.present?
+      - if @article.article_imgs.present?
         %p Image
-        = image_tag @article.article_img
+        - @article.article_imgs.each do |article_img|
+          = image_tag article_img
     -if @article.content.present?
       .answer
         Answer
