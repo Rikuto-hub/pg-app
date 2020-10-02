@@ -4,6 +4,7 @@
 @import 'profile';
 @import 'comment';
 @import 'follow';
+@import 'flash';
 body{
     margin: 0;
 }
@@ -16,6 +17,15 @@ body{
     padding: 10px;
     .header_right, .header_left, .header_sub, .timeline_sub, .header_item{
         padding: 10px;
+    }
+    .header_left{
+        display: flex;
+        .header_back{
+            background-color: darkgray;
+            color: white;
+            margin: 0 3px;
+            padding: 0 3px;
+        }
     }
 }
 a{
