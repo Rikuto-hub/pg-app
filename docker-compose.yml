@@ -1,0 +1,42 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - '5432:5432' 
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    environment: 
+      POSTGRES_PASSWORD: 'postgres' 
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bundle exec unicorn -p 3000 -c /myproject/config/unicorn.conf.rb 
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db 
+    ports:
+      - "3000:3000" 
+    volumes:
+      - .:/pg-app:cached
+      - tmp-data:/myproject/tmp/sockets
+      - public-data:/myproject/public
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    restart: always 
+    volumes:
+      - tmp-data:/myproject/tmp/sockets
+      - public-data:/myproject/public
+    depends_on:
+      - web 
+volumes:
+  public-data:
+  tmp-data:
+  postgresql-data:
+    driver: local
