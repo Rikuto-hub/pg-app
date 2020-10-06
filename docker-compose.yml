@@ -20,7 +20,7 @@ services:
     ports:
       - "3000:3000" 
     volumes:
-      - .:/pg-app:cached
+      - .:/myproject:cached
       - tmp-data:/myproject/tmp/sockets
       - public-data:/myproject/public
   nginx:
