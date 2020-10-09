@@ -1,5 +1,5 @@
 .article_name
-  = link_to account_path(article.language) do
+  = link_to account_path(article.language.user.id) do
     = article.language.user.account_name
 = link_to language_article_path(id: article.id, language_id: article.language_id) do
   .article

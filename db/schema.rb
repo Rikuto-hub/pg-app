@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_173347) do
     t.bigint "user_id", null: false
     t.text "introduction"
     t.string "job"
+    t.text "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"

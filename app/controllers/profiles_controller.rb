@@ -18,6 +18,6 @@ class ProfilesController < ApplicationController
     end
     private
     def profile_params
-        params.require(:profile).permit(:job, :introduction, :avatar)
+        params.require(:profile).permit(:job, :introduction, :url, :avatar)
     end
 end
