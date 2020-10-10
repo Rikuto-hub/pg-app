@@ -4,7 +4,7 @@
       = @language.user.account_name
     .article_post
       - if @language.user === current_user
-        = link_to 'POST', new_language_article_path(@language)
+        = link_to '+POST', new_language_article_path(@language)
   .articles
     - @articles.each do |article|
       = link_to language_article_path(id: article.id) do
