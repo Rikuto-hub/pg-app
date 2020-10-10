@@ -2,6 +2,6 @@
   .language_top
     %div= link_to 'profile', profile_path
     %div= @current_user.account_name
-    %div= link_to 'POST', new_language_path
+    %div= link_to '+POST', new_language_path
   = render 'commons/language', languages: @languages
         
