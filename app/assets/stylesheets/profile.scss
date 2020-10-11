@@ -23,3 +23,19 @@
     text-align: center;
     margin: 20px;
 }
+@media screen and (min-width: 768px){
+    .profile_name{
+        padding: 20px 0;
+        img{
+            width: 10%;
+            margin: 0 15px;
+        }
+    }
+    .profile_top{
+        padding: 20px 0;
+    }
+    .error_all{
+        padding: 20px;
+        margin: 20px;
+    }
+}
