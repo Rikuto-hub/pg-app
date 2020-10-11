@@ -1,24 +1,25 @@
-# README
+#   アプリケーション概要
+    プログラミングの学習ツールです。
+    主にエラーを記録し、同じエラーを起こさないように復讐、エラーが起きた時に解決の助けとなるアプリです。
+#   技術一覧
+    - 言語 Ruby2.6.5(Ruby on Rails6), JavaScript(jquery)
+    - インフラ ec2(amazon linux 2), docker
+    - サーバー nginx, unicorn
+    - DB PostgreSQL
+    - バージョン管理 GitHub
+#   機能一覧
+    - エラーに関しての解決策などのCRUD機能
+    - ユーザー登録機能
+    - ajaxによるフォロー、コメント機能
+    - タイムライン機能
+    - 画像投稿機能
+    - 問題形式のエラー確認機能
+#   機能詳細
+    トップページはログインの状況によってユーザーのトップページまたはタイムラインが表示される
+    それぞれのユーザーが言語やカテゴリ毎にエラーの記事を投稿できる
+    記事の詳細ページは問題形式で表示され、間違えた回数を記録できる
+    AllEroorページにてよく間違えるエラーの順で記事が表示される
+    プロィールではユーザーの自己紹介やサービスのurlを登録できる
+    それぞれのユーザーが上記の情報を持ち他のユーザーの情報をみたり、フォロー、コメントできる
+    ユーザーのデータなどに基づきajax、jqueyにて表示の切り替えがされる
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
