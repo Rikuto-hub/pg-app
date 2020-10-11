@@ -2,39 +2,42 @@
     background-color: lightgrey;
     margin: 20px 0;
     padding: 10px;
-}
-.article_item{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-.article_error{
-    margin: 10px 0;
-}
-.article_top{
-    display: flex;
-    justify-content: space-between;
-}
-.article_detail{
-    p{
-        color: lightslategray;
-        border-bottom: ridge;
+    &_item{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
     }
-    .answer{
+    &_error{
+        margin: 10px 0;
+    }
+    &_top{
+        display: flex;
+        justify-content: space-between;
+    }
+    &_detail{
+        p{
+            color: lightslategray;
+            border-bottom: ridge;
+        }
+        .answer{
+            text-align: center;
+            color: white;
+            background-color: black;
+            width: 30%;
+            border-radius: 20px;
+            margin: 40px auto;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+        .article_name{
+            text-align: center;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &_name{
         text-align: center;
-        color: white;
-        background-color: black;
-        width: 30%;
-        border-radius: 20px;
-        margin: 40px auto;
-    }
-    .answer:hover{
-        opacity: 0.7;
-    }
-    .article_name{
-        text-align: center;
-    }
-    img{
-        width: 100%;
     }
 }

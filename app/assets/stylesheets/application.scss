@@ -15,29 +15,29 @@ body{
     background-color: whitesmoke;
     border-bottom: ridge;
     padding: 10px;
-    .header_right, .header_left, .header_sub, .timeline_sub, .header_item{
+    &_right, &_left, &_sub, .timeline_sub, &_item{
         padding: 10px;
     }
-    .header_left{
-        display: flex;
-        .header_back{
-            background-color: darkgray;
-            color: white;
-            margin: 0 3px;
-            padding: 0 3px;
-        }
+    &_back{
+        background-color: darkgray;
+        color: white;
+        margin: 0 3px;
+        padding: 0 3px;
     }
 }
 a{
     text-decoration: none;
     color: black;
-}
-a:hover{
-    opacity: 0.7;
+    &:hover{
+        opacity: 0.7;
+    }
 }
 .container{
     padding: 25px 10px;
 }
 .hidden{
     display: none;
+}
+.header_left{
+    display: flex;
 }

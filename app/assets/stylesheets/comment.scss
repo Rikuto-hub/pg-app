@@ -5,14 +5,12 @@
     background-color: darkgrey;
     padding: 10px 0;
     width: 30%;
-}
-.comments_container{
-    .comment_form{
+    &_form{
         margin: 20px auto;
         display: flex;
         justify-content: center;
     }
-    .comment_post{
+    &_post{
         display: flex;
         justify-content: center;
         margin: 5px auto;
@@ -20,12 +18,18 @@
         width: 35%;
         color: white;
     }
-    p{
-        line-height: 0.5;
-    }
     .comment_view{
         text-align: center;
         font-size: 20px;
+    }
+    &_view{
+        text-align: center;
+        font-size: 20px;
         margin: 30px 0;
+    }
+}
+.comments_container{
+    p{
+        line-height: 0.5;
     }
 }
