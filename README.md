@@ -3,8 +3,9 @@
     主にエラーを記録し、同じエラーを起こさないように復讐、エラーが起きた時に解決の助けとなるアプリです。
 #   技術一覧
     - 言語 Ruby2.6.5(Ruby on Rails6), JavaScript(jquery)
-    - インフラ ec2(amazon linux 2), docker
-    - サーバー nginx, unicorn
+    - インフラ ec2(amazon linux 2), docker(docker compose)
+    - Webサーバー Nginx
+    - アプリケーションサーバー Unicorn
     - DB PostgreSQL
     - バージョン管理 GitHub
 #   機能一覧
@@ -21,5 +22,5 @@
     AllEroorページにてよく間違えるエラーの順で記事が表示される
     プロィールではユーザーの自己紹介やサービスのurlを登録できる
     それぞれのユーザーが上記の情報を持ち他のユーザーの情報をみたり、フォロー、コメントできる
-    ユーザーのデータなどに基づきajax、jqueyにて表示の切り替えがされる
+    ユーザーのデータなどに基づきAjax、jQueyにて表示の切り替えがされる
 

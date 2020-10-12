@@ -21,7 +21,10 @@
 }
 .error_all{
     text-align: center;
-    margin: 20px;
+    margin: 20px auto;
+    background: radial-gradient(white, gray);
+    border-radius: 10px;
+    width: 50%;
 }
 @media screen and (min-width: 768px){
     .profile_name{
@@ -36,6 +39,10 @@
     }
     .error_all{
         padding: 20px;
-        margin: 20px;
+        border-radius: 20px;
+        width: 35%;
+        &:hover{
+            opacity: 0.7;
+        }
     }
 }
