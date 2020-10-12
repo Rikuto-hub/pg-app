@@ -5,6 +5,10 @@
     background-color: darkgrey;
     padding: 10px 0;
     width: 30%;
+    &:hover{
+        opacity: 0.7;
+        border-radius: 10px;
+    }
     &_form{
         margin: 20px auto;
         display: flex;
@@ -17,6 +21,10 @@
         background-color: darkgrey;
         width: 35%;
         color: white;
+        &:hover{
+            opacity: 0.7;
+            border-radius: 10px;
+        }
     }
     &_view{
         text-align: center;
