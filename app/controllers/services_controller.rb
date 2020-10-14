@@ -1,7 +1,11 @@
 class ServicesController < ApplicationController
     before_action :authenticate_user!
     def edit
-        @profile = current_user.prepare_profile
+        if current_user.profile.present?
+            @profile = current_user.prepare_profile
+        else 
+            redirect_to edit_profile_path
+        end
     end
     def update
         @profile = current_user.prepare_profile
@@ -15,6 +19,6 @@ class ServicesController < ApplicationController
     end
     private
     def profile_params
-        params.require(:profile).permit(:url)
+        params.require(:profile).permit(:job, :introduction, :url, :avatar)
     end
 end
