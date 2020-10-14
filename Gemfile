@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'hamlit'
 gem 'active_model_serializers'
 gem 'unicorn'
+gem 'faker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -36,6 +37,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
