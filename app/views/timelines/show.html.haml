@@ -1,4 +1,8 @@
 .container
+  .search
+    = form_tag(searches_path,:method => 'get') do
+      = text_field_tag :search
+      = submit_tag 'Search', :name => nil
   - if user_signed_in?
     .article_followings
       - @languages.each do |language|

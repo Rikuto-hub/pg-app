@@ -1,12 +1,4 @@
 .container
   .articles
   - @articles.each do |article|
-    = link_to language_article_path(id: article.id, language_id: article.language_id) do
-      .article
-        .article_item
-          .article_title
-            = article.title
-          .article_number
-            = article.number
-        .article_error
-          = article.error
+    = render 'commons/article', article: article
