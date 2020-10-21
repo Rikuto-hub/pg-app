@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :errors, only:[:show]
   resource :timeline, only:[:index, :show]
+  resources :searches, only: [:index]
 end
